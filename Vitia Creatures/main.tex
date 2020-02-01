@@ -1,0 +1,771 @@
+\documentclass{article}
+\usepackage[background]{genesys}
+\title{Vitia 2.0}
+\author{Kaleb Poole}
+\date{July 2019}
+\graphicspath{{./img/}}
+\setlength{\parindent}{0cm}
+\newenvironment{SpellTable}[0]{%
+    \begin{GenesysTable}{|X[l]|X[4l]|X[l]|}
+    \hline Effect Name & Effect & Difficulty Increase \\ \hline
+  }
+{\end{GenesysTable}}
+\newenvironment{WeaponTable}[0]{%
+    \begin{GenesysTable}{|X[l3]|X[l]|X[l]|X[l]|X[l1.5]|X[l]|X[l6]|}
+    \hline Weapon Name & Type & Damage & Critical & Range & Price & Modifiers \\ 
+    \hline
+  }
+{\end{GenesysTable}}
+\newenvironment{Figure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+\newcommand{\WeaverPrereq}{\textit{This talent requires your character to be able to cast spells with Weaving to benefit from it.}\\}
+\newcommand{\NaturalPrereq}{\textit{This talent requires your character to be able to cast spells with Manaflow to benefit from it.}\\}
+\newcommand\CasterPrereq{\textit{This talent requires your character to be able to cast spells to benefit from it.}\\}
+\newcommand\Simple{Simple [-]}
+\newcommand\Easy{Easy [\Purple[1]]}
+\newcommand\Average{Average [\Purple[2]]}
+\newcommand\Hard{Hard [\Purple[3]]}
+\newcommand\Daunting{Daunting [\Purple[4]]}
+\newcommand\Formidable{Formidable [\Purple[5]]}
+\newcommand\Nocast[1]{Natural casters who use #1 magic cannot cast these spells.}
+\setcounter{tocdepth}{2} 
+\begin{document}
+\tableofcontents
+\newpage
+\section{Adversaries}
+\begin{multicols}{2}
+\vbox{
+\subsection{Fleshcrafter (Rival)}
+\begin{center}
+\Characteristics{2}{2}{3}{3}{4}{2}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{12}
+%\Derived{S. Threshold}{14}
+\DerivedSplit{Defense}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Manaflow 3 \Yellow[4],
+Cool 2 \Yellow[2]|\Green[2],
+Know (Mana) 3 \Yellow[3],
+Vigilance 2 \Yellow[2]\Green[1],
+Stealth 2 \Yellow[2]\Green[1],
+Ranged (L) 2 \Yellow[2],
+\textbf{Talents:}
+Adversary 2 (Upgrade all combat checks against this target twice)\\
+\textbf{Abilities:}
+Fleshy Resurrection: May make a \Hard Manaflow check, on a success resurrect one corpse as a flesh abomination increase its brawn by 1 for \Success\Success, and its agility by 1 for \Advantage\Advantage.\\
+\textbf{Equipment:}  Revolver (Dam 6 | Crit 4 | Range Medium | Accurate 1), Heavy Jacket (Soak 1), Smoke Grenade
+}
+
+
+\vbox{
+\subsection{Flesh Horde (Minion)}
+\begin{center}
+\Characteristics{3}{3}{1}{3}{2}{1}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{6}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Brawl,
+Ranged (Light),
+\\\textbf{Talents:} None
+\\\textbf{Abilities:}
+Grasping Hands (Whenever a creature leaves engaged, may make a brawl attack against them, upgrade the difficulty once)
+\\\textbf{Equipment:}
+Bloodied Claws (Dam 4 (+1), Crit 3, Range Engaged)
+Bone Skewer (Dam 3 (+0), Crit 2, Range Engaged, Accurate 1)
+}
+
+\vbox{
+\subsection{Flesh Abomination (Rival)}
+\begin{center}
+\Characteristics{4}{3}{1}{3}{3}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{20}
+%\Derived{S. Threshold}{11}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Brawl 4 \Yellow[3]\Green[1],
+Ranged (Light) 3 \Yellow[3],
+Survival 3 \Yellow[3],
+Athletics 3 \Yellow[3],
+Perception 3 \Yellow[3],
+Vigilance 2 \Yellow[2]\Green[1],
+Cool 2 \Yellow[2]\Green[1],
+\\\textbf{Talents:}
+Berserk (Manoeuvre to get \Success\Advantage\Advantage on all melee combat checks, opponents get \Success on all combat checks targeting this character)
+Adversary (Upgrade all combat checks against this target by \Purple[1]
+\\\textbf{Abilities} (One of):
+Pinning (After a successful melee attack the target must make a \Hard Coordination check or be pinned down, They must succeed on the same check to get free or be unable to use manoeuvres.)
+Rage (After taking damage the critical value of all brawl attacks becomes 1)
+Adaptive Plating (After being attacked by a weapon, increase soak against attacks from that weapon by 1 until the end of the encounter.)
+Lightning Reflexes (Always has two manoeuvres)
+\\\textbf{Equipment} (Two of):
+Venomous Fangs(Dam 5 (1+) | Crit 3 | Range Engaged| Burn 2| Pierce 3),
+Crushing Limbs(Dam 7 (3+) | Crit 4 | Range Engaged| Concussive 1 | Inaccurate 2),
+Scything Claws(Dam 6 (2+) | Crit 2 | Range Engaged| Blast 3| Vicious 2),
+Bone Spines (Dam 5| Crit 2 | Range Short| Pierce 1| Vicious 3),
+Hardened Plating(Defence 2),
+}
+
+
+\vbox{
+\subsection{Private Military Contractor (Minion)}
+\begin{center}
+\Characteristics{2}{3}{2}{3}{3}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{10}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Ranged (Heavy)
+Ranged (Light)
+Perception
+Vigilance
+Melee
+Cool
+\\\textbf{Talents:}
+Grenadier (Spend a story point to trigger blast, grenades have a range of medium)
+\\\textbf{Abilities:}
+Suppressing Fire (When three or more PMCs make a ranged attack against targets that are engaged with each other, those targets take \Black[1] on all checks until their next turn)
+\\\textbf{Equipment:}
+Assault Rifle (Heavy, Dam 7, Crit 3, Range Medium, Autofire) or Shotgun (Heavy, Dam 8, Crit 3, Range Short, Inaccurate 1, Blast 2, Vicious 1),
+Knife (Military) (Dam 4, Crit 2, Range Engaged, Vicious 2, Pierce 1)
+1 Frag grenade (Light, Dam 8, Crit 3, Range Medium, Ammo 1, Vicious 2, Blast 5) per 5 PMCs,
+Flash Grenade (Dam 4, Crit 4, Range Medium, Ammo 1, Stun Damage, Blast 2, Concussive 2, Pierce 4), Military Armour (Soak 2, Defence 1)
+}
+
+
+
+\vbox{
+\subsection{Arcane Scientist (Nemesis)}
+\begin{center}
+\Characteristics{2}{3}{5}{4}{4}{3}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{10}
+\Derived{S. Threshold}{20}
+\DerivedSplit{Defence}{2}{2}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Weaving 4 \Yellow[4]\Green[1],
+Knowledge (Mana) 4 \Yellow[4]\Green[1],
+Alchemy 3 \Yellow[3]\Green[2],
+Mechanics 3 \Yellow[3]\Green[2],
+Medicine 3 \Yellow[3]\Green[2],
+Computers 3 \Yellow[3]\Green[2],
+Coercion 4 \Yellow[3]\Green[1],
+Cool 3 \Yellow[3]\Green[1],
+Vigilance 2 \Yellow[2]\Green[2],
+Perception 2 \Yellow[2]\Green[2],
+Deception 2 \Yellow[2]\Green[1],
+Negotiation 2 \Yellow[2]\Green[1],
+Leadership 2 \Yellow[2]\Green[1],
+Ranged (Light) 1 \Yellow[1]\Green[2]\\
+\textbf{Talents:}
+Potent Weaving (Can add up to two effects to spells),
+Advanced Preferred Spell (Dominate) (Reduce the difficulty of Dominate by \Purple[2]),
+Versatile Targeting (Using additional targets or range does not change the spell)\\
+\textbf{Abilities:}
+Counterspelling (upgrade the difficulty of all foes within medium range's Weaving and Manaflow checks by two.)\\
+Spellthief (Can copy any spell that is not successfully cast within medium range with \Purple[1] less difficulty)\\
+\textbf{Spellcasting:} Arcane Scientists can cast spells as weavers. Normally they know the additional effects Dominate (Curse),  Plasma (Attack), Grand Summon (Conjure), Flowing Time (Augment), Defensive Blink (Barrier), Resonance (Attack), Blast (Attack), Permafrost (Curse), Cryostasis (Augment). Spells they cast often are:\\
+\textbf{Dominate} make a \Hard Weaving check. If successful you dominate them and may give them orders as a part of the concentrate manoeuvre. At the start of each of their turns they make a \Daunting Discipline check to end the spell early.\\
+\textbf{Disintegrate} make a \Hard Weaving check. On a success the target takes 10 damage.\\
+\textbf{Equipment:} Flash grenade, Revolver (Dam 6 | Crit 4 | Range Medium | Accurate 1), Nanofibre Lab coat (Def 2 | Soak 1), Gas Mask
+}
+
+\vbox{
+\subsection{Syndicate Scum (Minion)}
+\begin{center}
+\Characteristics{2}{3}{2}{1}{2}{1}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{6}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Melee, Ranged (Light), Skulduggery
+\\\textbf{Talents:} None
+\\\textbf{Abilities:} Fair-weather Fighters (Add \Blue[1] on all combat checks if no allies have been defeated, if an ally has been defeated add \Black[1] instead
+\\\textbf{Equipment:} Knife (Commercial) (Melee, Dam 3, Crit 3, Range Engaged, Vicious 1), possibly an Air Rifle (Light, Dam 5, Crit 4, Range Medium, Stun Damage) or a Revolver (Light, Dam 6, Crit 4, Range Medium, Accurate 1)
+}
+
+\vbox{
+\subsection{Syndicate Initiate (Minion)}
+\begin{center}
+\Characteristics{3}{3}{2}{2}{3}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{8}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:} Melee, Ranged (Light), Cool, Vigilance, Perception
+\\\textbf{Talents:} Syndicate Initiate (Add \Blue[2] to the next check after a story point is spent)
+\\\textbf{Abilities:} Loyalty (Upgrade the difficulty of checks to intimidate or threaten this target once)
+\\\textbf{Equipment:} Shotgun (Sawn off) (Dam 7, Crit 4, Range Short, Inaccurate 2, Blast 1) or Revolver (Dam 6, Crit 4, Range Medium, Accurate 1), Knife (Commercial) (Dam 4, Crit 3, Vicious 1), Heavy Colthing (+1 Soak)
+}
+
+\vbox{
+\subsection{Syndicate Lieutenant (Rival)}
+\begin{center}
+\Characteristics{2}{3}{3}{3}{2}{3}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{12}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Ranged (Light) 2 \Yellow[2]\Green[1],
+Leadership 2 \Yellow[2]\Green[1],
+Charm 2 \Yellow[2]\Green[1],
+Coercion 2  \Yellow[2]\Green[1],
+Negotiation 2  \Yellow[2]\Green[1],
+Deception 1 \Yellow[1]\Green[2],
+Skulduggery 1 \Yellow[1]\Green[2],
+Cool 1 \Yellow[1]\Green[2],
+Discipline 1 \Yellow[1]\Green[1],
+\\\textbf{Talents:} Syndicate Initiate (add \Blue[2] to the next check after a story point is spent), Syndicate Lieutenant (Cast a spell using Manaflow, upgraded once, with a story point)
+\\\textbf{Abilities:}Don't Mess Up (Once per encounter may make a \Hard leadership check as an out of turn incidental. Reroll one die per \Success and one \Blue[1] or \Black[1] per \Advantage) Loyalty (Upgrade the difficulty of checks to intimidate or threaten this target once)
+\\\textbf{Equipment:} Knife, Military (Dam 4, Crit 2, Range Engaged, Vicious 2, Pierce 1), Shotgun (Sawn off) (Dam 7, Crit 4, Range Short, Inaccurate 2, Blast 1) or Revolver (Dam 6, Crit 4, Range Medium, Accurate 1), Heavy Clothing (+1 Soak)
+}
+
+
+\vbox{
+\subsection{Syndicate Soldier (Minion)}
+\begin{center}
+\Characteristics{3}{3}{2}{2}{2}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{13}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Ranged Light
+Ranged Heavy
+\\\textbf{Talents:}
+Adversary 1
+\\\textbf{Abilities:}
+\\\textbf{Equipment:}
+Varies
+}
+    
+\vbox{
+\subsection{Syndicate Mage (Rival)}
+\begin{center}
+\Characteristics{3}{2}{2}{2}{4}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{13}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:} 
+Melee 2 \Yellow[2],
+Ranged (Light) 1 \Yellow[1]\Green[1],
+Manaflow 3 \Yellow[3]\Green[1],
+Vigilance 2 \Yellow[2]\Green[2],
+Knowledge (Mana) 2 \Yellow[2],
+Perception 2 \Yellow[2],
+Cool 2 \Yellow[2],
+\\\textbf{Talents:} Syndicate Initiate (Add \Blue[2] to the next check after a story point is spent)
+Discharge (Use a Manoeuvre to add \Advantage\Advantage to the next spell cast)
+\\\textbf{Abilities:} Loyalty (Upgrade the difficulty of checks to intimidate or threaten this target once)
+\\\textbf{Spellcasting:} a ganger mage can cast spells using Manaflow, the GM should select a type of magic that they can use, some example spells are given here (with the corresponding type of magic specified)
+\\\textbf{Incinerate (Fire Mage)} make a \Hard Manaflow check to deal 8 damage to a target
+\\\textbf{Equipment:} Revolver (Dam 6, Crit 4, Range Medium, Accurate 1), Knife (Commercial) (Dam 4, Crit 3, Vicious 1), Heavy Clothing (+1 soak), Possibly an implement
+}
+
+\vbox{
+\subsection{Green Ransomer (Rival)}
+\begin{center}
+\Characteristics{2}{3}{3}{4}{3}{3}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{14}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Manaflow 3 \Yellow[3]\Green[1]
+Coercion 2 \Yellow[2]\Green[2]
+Negotiation 3 \Yellow[3]
+Deception 3 \Yellow[3]
+Driving 2 \Yellow[2]\Green[1]
+Ranged (Light) 2 \Yellow[2]\Green1[]
+Cool 1 \Yellow[1]\Green[2]
+Perception 1 \Yellow[1]\Green[2]
+\\\textbf{Talents:}
+Discharge (Spend a manoeuvre to add \Advantage\Advantage to your next spell casting check),
+Specialist (Remove \Purple[2] from Phasing spells that only use the additional targets effect)
+\\\textbf{Spells:}
+Phase (Make a \Average Manaflow check. On a success two targets phase through objects at the Ransomer's discretion. Spend \Advantage equal to the silhouette of a vehicle to effect the vehicle and everything inside it, or to increase the number of targets)\\
+Bulletproof (Make a \Hard Manaflow check, reduce the damage taken by 1 per uncanceled \Success.)
+\\\textbf{Equipment:}
+Knife (Military) (Dam 4, Crit 2, Range Engaged, Vicious 2 Pierce 1), Revolver (Dam 6, Crit 4, Range Medium, Accurate 1), Heavy Clothing (+1 Soak), possibly and AMP, possibly an implement.
+}
+
+\vbox{
+\subsection{Sewer Crocodile (Rival)}
+\begin{center}
+\Characteristics{4}{3}{1}{3}{2}{2}
+\Derived{Soak}{5}
+\Derived{W. Threshold}{26}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Athletics 2 \Yellow[2]\Green[2],
+Brawl 3 \Yellow[3],
+Stealth 2 \Yellow[2]\Green[1],
+Cool 3 \Yellow[2]\Green[1],
+Vigilance 1 \Yellow[1]\Green[1]
+\\\textbf{Talents:}
+Berserk (add \Success\Advantage\Advantage to melee combat checks. opponents add \Success to theirs)
+Quick Strike II (add \Blue[2] to all combat checks that target something that hasn't acted yet in this encounter)
+\\\textbf{Abilities:}
+Death Roll (If a target is ensnared by a sewer crocodile's attack, add \Advantage\Advantage too all attacks the crocodile makes against that target),
+Lunge (On its first action in combat, a crocodile gets two manoeuvres instead of one),
+Silhouette 2
+\\\textbf{Equipment:}
+Scales (+1 Soak), Powerful Jaws (Dam 8, Crit 3, Range Engaged, Ensnare I)
+}
+
+\vbox{
+\subsection{Hydrodile (Rival)}
+\begin{center}
+\Characteristics{5}{3}{2}{3}{3}{2}
+\Derived{Soak}{7}
+\Derived{W. Threshold}{34}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Athletics 3 \Yellow[3]\Green[2],
+Brawl 3 \Yellow[3],
+Stealth 2 \Yellow[2]\Green[1],
+Manaflow 2\Yellow[2]\Green[1],
+Cool 3 \Yellow[3],
+Vigilance 1 \Yellow[1]\Green[2]
+Knowledge (Mana) 2 \Yellow[2],
+\\\textbf{Talents:}
+Berserk (add \Success\Advantage\Advantage to melee combat checks. opponents add \Success to theirs)
+Conduit (Deep Freeze) (reduce the difficulty of casting spells that use the deep freeze additional effect by \Purple[1])
+\\\textbf{Abilities:}
+Death Roll (If a target is ensnared by a sewer crocodile's attack, add \Advantage\Advantage too all attacks the crocodile makes against that target),
+Lunge (On its first action in combat, a crocodile gets two manoeuvres instead of one),
+Silhouette 2,
+Magic Creature (Casting spells does not cause strain)
+\textbf{Spellcasting:}A Hydrodile can cast Water spells using Manaflow as a natural caster. Some spells they often cast are:\\
+\textbf{Deep Freeze} Select a target in Short range and make a \Daunting Manaflow check, on a success reduce the target's ability for any skill checks by one, additionally they are staggered for the duration.\\
+\textbf{Drag Down} Select a target in Short range and make a \Average Manaflow check. On a success the target takes 3 damage, this spell has the disorient II and ensnare II qualities.\\
+\textbf{Frozen Waters} Select a target in Engaged range and make an \Hard Manaflow check. on a success reduce all damage the target takes by one plus one for each \Success\Success, additionally all creatures engaged with the target add \Purple[1] to their checks.
+\\\textbf{Equipment:} 
+Scarred Scales (+2 Soak), Powerful Jaws (Dam 9, Crit 3, Range Engaged, Ensnare I)
+}
+
+\vbox{
+\subsection{Tunnel Spider (Nemesis)}
+\begin{center}
+\Characteristics{3}{3}{2}{4}{5}{2}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{23}
+\Derived{S. Threshold}{28}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Manaflow 3 \Yellow[3]\Green[2],
+Cool 3  \Yellow[2]\Green[2]
+Vigilance 1  \Yellow[2]\Green[2]
+Knowledge (Mana) 4  \Yellow[2]\Green[2]
+Stealth 2  \Yellow[2]\Green[1]
+Brawl 1  \Yellow[1]\Green[2]
+Ranged (Light) 1  \Yellow[1]\Green[2]
+Athletics 1 \Yellow[1]\Green[2]
+\\\textbf{Talents:}
+Discharge I (Use a reaction to add \Advantage\Advantage to the next check to cast a spell. up to \Advantage\Advantage\Advantage\Advantage),
+Arcano-Circean Study (Make magic traps, casting spells ahead of time)
+\\\textbf{Abilities:}
+Skitter (can move across walls, ceilings, and giant spider webs without penalty),
+Silhouette 3,
+Fire-Resistant (A Tunnel Spider and its webs are resistant to fire damage, reduce all damage they take from fire by 1),
+Magic Creature (Casting spells does not cause strain)
+\\\textbf{Spellcasting:} Tunnel Spiders can cast spells using Manaflow as a natural caster. Some spells they often cast are:
+\\\textbf{Flame Trap} make a \Hard Manaflow check with +\Advantage\Advantage\Advantage\Advantage (Until successful), When other than the Tunnel Spider attempts to leave its lair they take 10 damage plus one for each uncanceled \Success.
+\\\textbf{Immolate} target a creature in Short range and make a \Hard Manaflow check. On a success that target takes 5 damage, this attack has Blast IV and Burn IV
+\\\textbf{Equipment:} Fangs (Dam 5, Crit 3, Range Engaged, Pierce 3), Webbing (Dam 1, Crit 6, Range Short, Ensnare 3), Thick Hide (Defense +1)
+}
+
+
+\vbox{
+\subsection{Thunderfly Swarm (Rival)}
+\begin{center}
+\Characteristics{1}{4}{2}{2}{5}{1}
+\Derived{Soak}{1}
+\Derived{W. Threshold}{9}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{2}{2}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Manaflow 4 \Yellow[4]\Green[1],
+Knowledge (Mana) 4 \Yellow[2]\Green[2],
+Vigilance 2 \Yellow[2]\Green[2],
+Cool 1 \Yellow[1]\Green[3]
+\\\textbf{Talents:}
+Conduit (Chain Lightning) (Whenever casting a spell with the chosen ability reduce the difficulty by \Purple[1])
+Discharge (Spend a manoeuvre to add \Advantage\Advantage to the next Manaflow check to cast a spell, stacks up to \Advantage\Advantage\Advantage\Advantage)
+\\\textbf{Abilities:}
+Magical Creature (Casting spells does not cause strain),
+Flyer (Can fly, see flying rules on page 100),
+Swarm (Takes half damage from bullets, knives and similar weapons, takes +50\% damage from weapons with the blast quality, increase ranged and melee defence by 2, cannot be grappled etc.),
+Glowing (Ignore up to \Black[1] for targeting this creature in darkness, this creature also ignores up to \Black[1] for darkness),
+Silhouette 1 (0 Individually)
+\\\textbf{Spellcasting:} Thunderfly swarms cast Lightning spells with Manaflow as natural casters. Some common spells they cast are: 
+\\\textbf{Chain Lightning} Select one target in Short range and make a \Easy Manaflow check. On a success the target takes 5 damage, this attack has the auto-fire quality.
+\\\textbf{Thunderstrike} Select one target in Short range and make a \Average Manaflow check. On a success the target takes 5 damage, this attack has the auto-fire and Blast IV qualities.
+\\\textbf{Accelerate} Select a target in Engaged range and make a \Hard Manaflow check. on a success increase their ability by one for any skill checks they make, additionally they gain an additional manoeuvre each turn and ignore the effects of difficulty terrain.
+\\\textbf{Equipment:}
+}
+
+\vbox{
+\subsection{Malochio Witch (Rival)}
+\begin{center}
+\Characteristics{3}{3}{4}{3}{3}{4}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{13}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{2}{2}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Knowledge (Mana 4) \Yellow[4],
+Weaving 3 \Yellow[3]\Green[1],
+Coercion 3 \Yellow[3]\Green[1], 
+Negotiation 2  \Yellow[2]\Green[2],
+Perception 3 \Yellow[3],
+Deception 3  \Yellow[3],
+Vigilance 2 \Yellow[2]\Green[1],
+Cool 1 \Yellow[1]\Green[2]
+\\\textbf{Talents:}
+Potent Weaving (Can add up to 2 additional effects to spells),
+Preferred Spell (Hex) (Reduce the difficulty of casting Hex by \Purple[1]),
+Versatile Targeting (Additional Targets, and Range do not affect the nature of a spell)
+\\\textbf{Abilities:}
+Old Tongue (Reduce the difficulty of making a curse permanent by \Purple[1], upgrade the difficulty of dispelling a curse once)
+Black Mark (A Malochio Witch may place a black bark on your name, upgrade the difficulty of all social roles with Malochio Witches by one if they recognise your name or face)
+Counterhex (Upgrade the difficulty of all hostile spells that target a Malochio Witch once)
+\\\textbf{Spellcasting} A Malochio Witch can cast spells as a weaver, she can add the following additional effects as well as range and additional targets: Reverberate, Silence, Resonance, Necrosis, Warped Limbs, Static Shock, Shut Down, Cold Snap. Some spells that they often cast are:
+\\\textbf{Hex} Select a target within Short range and make a \Hard Weaving check, on a success the target the target decreases the ability of any skill checks they make by one and upgrade the difficulty of all physical checks once for each \Success\Success generated.
+\\\textbf{Eye of Death} Select a target in Short range and make a \Average Weaving check, on a success the target takes 4 damage, this attack has a critical rating of 2 and Vicious 4.
+\\\textbf{Ward} Select a target in Engaged range and make a \Average Weaving check, on a success reduce all damage they take by 1 plus 1 for each \Success\Success. additionally when the target is struck they may spend \Threat\Threat or \Despair to inflict 4 damage to the attacker.
+\\\textbf{Equipment:} Spear (+3 dam, Crit 3, Range Engaged, Defensive 2, pierce 2), Runed Knife (+2 dam, Crit 2, Range Engaged, Accurate 1, Pierce 3), Enchanted Robes (+0 Soak, +2 Defense), Hexproof Mask (Functions like a gas mask). Devil Dust (4 doses), Mana Phosphor (1 dose), Void Sand (Possibly)
+}
+
+\vbox{
+\subsection{The Sheriff (Nemesis)}
+\begin{center}
+\Characteristics{4}{5}{3}{2}{3}{3}
+\Derived{Soak}{6}
+\Derived{W. Threshold}{16}
+\Derived{S. Threshold}{11}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Discipline 2 \Yellow[2]\Green[1]
+Athletics 2 \Yellow[2]\Green[2]
+Ranged (Heavy) 3 \Yellow[3]\Green[2]
+Ranged (Light) 2 \Yellow[2]\Green[3]
+Skulduggery 1 \Yellow[1]\Green[2]
+Vigilance 2 \Yellow[2]\Green[2]
+Negotiation 1 \Yellow[1]\Green[2]
+Leadership 1 \Yellow[1]\Green[2]
+\\\textbf{Talents:}
+Rapid Reaction 2 (May suffer strain to add \Success on initiative checks, up to twice)
+Side Step 1 (May suffer strain to upgrade the difficulty of ranged combat checks against them once)
+\\\textbf{Abilities:}
+Mechanical (does not need to breathe, eat, or drink, and can survive underwater; immune to poisons, toxins, and psychic effects)
+Telepresence (can operate independently, or can be controlled directly by an operator via wireless link; if being controlled, the combat drone counts as having ranks in a skill equal to the controller’s ranks in that skill)
+\\\textbf{Equipment:}
+Dragonfire Shotgun (Heavy, Dam 8, Crit 2, Range Short, Blast 4, Vicious 3, Pierce 2), Six Shooter (Light, Dam 7, Crit 3, Range Medium, Accurate 2, Superior)
+}
+
+\vbox{
+\subsection{The Mage (Nemesis)}
+\begin{center}
+\Characteristics{1}{2}{5}{3}{4}{2}
+\Derived{Soak}{1}
+\Derived{W. Threshold}{9}
+\Derived{S. Threshold}{16}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Computers 3 \Yellow[3]\Green[2],
+Weaving 2 \Yellow[2]\Green[3],
+Mechanics 2 \Yellow[2]\Green[3],
+Perception 4 \Yellow[2]\Green[2],
+Ranged (Light) 2 \Yellow[2],
+Skulduggery 3 \Yellow[2]\Green[1],
+Streetwise 2 \Yellow[2],
+Vigilance 4 \Yellow[4],
+Cool 2 \Yellow[2]\Green[2],
+Knowledge (Mana) 1 \Yellow[1]\Green[3],
+Knowledge (Mundane) 4 \Yellow[4]
+\\\textbf{Talents:}
+Unremarkable 2 (Add \Failure\Failure to any checks to identify your character in a crowd)
+Lucky Strike (Intellect) (Spend a story point to add 5 damage after a successful combat check)
+\\\textbf{Abilities:}
+Omniscience (The Mage sees and parses all the data from networked cameras he controls), FTL (The Mage can parse and arbitrary amount of visual information trivially. He also has a perfect memory)
+Deploy The Sheriff (Once per session, The Mage can deploy the sheriff to complete a goal. It will attempt to do so to the best of its capabilities)
+Spellcasting (The Mage is a weaver who can cast spells using the following additional effects: )
+\\\textbf{Equipment:} Smoke grenade, Revolver (Dam 6 | Crit 4 | RangeMedium | Accurate 1).
+}
+
+\vbox{
+\subsection{The Hound of Tindalos (Nemesis)}
+\begin{center}
+\Characteristics{3}{5}{2}{4}{3}{2}
+\Derived{Soak}{4}
+\Derived{W. Threshold}{23}
+\Derived{S. Threshold}{16}
+\DerivedSplit{Defence}{2}{2}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Skulduggery 2 \Yellow[2]\Green[2],
+Ranged Light 2 \Yellow[2]\Green[3],
+Ranged Heavy 2 \Yellow[2]\Green[3],
+Vigilance 3 \Yellow[3],
+Cool 2 \Yellow[2]\Green[1],
+Stealth 4 \Yellow[4],
+Brawl 3 \Yellow[3],
+Discipline 3 \Yellow[3]
+\\\textbf{Talents:}
+Advanced Shapeshift (make a \Hard{} Discipline Check to transform, or when first incapacitated by strain, increase Br an Ag by 1, decrease Int and Wil by 1. Unarmed strikes get +1 damage and a crit of 3.)
+Adversary 2 (Upgrade the difficulty of all combat checks against this target by 2)
+Rapid Reaction 2 (Suffer up to 2 strain to add the same amount of \Success to an initiative check)
+\\\textbf{Abilities:}
+Shadowstep (When using a manoeuvre to move, The Hound can teleport through shadows instead. If they do add \Boost to their next combat check this turn)
+Hunter's Mark (The Hound always knows the direction towards any Black Mark, additionally she can track them as if by scent)
+Blackblood (When The Hound crits against a target with a Black Mark, that attack gains vicious 1 (or increase its rank by 1) and they must make a \Hard Resilience check or be afflicted with Tindalos' Blight
+\\Tindalos' Blight: after three sunsets, and again each sunset thereafter the carrier must make a \Hard Resilience check. each if they fail they are afflicted by hallucinations, upgrade the difficulty of relevant checks once for each uncanceled \Fail. Threats can be spent to add \Black to checks in the future as hallucinations afflict the subject.
+\\\textbf{Equipment:}
+Revolver (Light | Dam 6 | Crit 4 | Range Med | Accurate 1), Katar (Brawl | Dam 4 (+1) | Crit 2 | Accurate 1), Hound's Hide (Defence 2, Soak 1)
+}
+
+\vbox{
+\subsection{Black Syndicate Preacher (Rival)}
+\begin{center}
+\Characteristics{2}{2}{3}{3}{3}{4}
+\Derived{Soak}{2}
+\Derived{W. Threshold}{10}
+\Derived{S. Threshold}{11}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Charm 3 \Yellow[3]\Green[1],
+Coercion 3 \Yellow[3]\Green[1],
+Negotiation 2 \Yellow[2]\Green[2],
+Cool 2 \Yellow[2]\Green[1],
+Deception 3 \Yellow[3],
+Vigilance 1 \Yellow[1]\Green[2],
+Ranged Light 1 \Yellow[1]\Green[1]
+\\\textbf{Talents:}
+Clever Retort (Once per encounter, your character may use this talent to add automatic \Threat\Threat another character’s social skill check.) 
+Threaten II (After an adversary within short range of your character resolves a combat check that deals damage to one of your character’s allies, your character may suffer 3 strain to use this talent to inflict a number of strain on the adversary equal to your character’s ranks in Coercion. The range of this talent increases by one band per rank of Threaten beyond the first.) 
+Scathing Tirade (Your character may use this talent to make an \Average coercion check. For each \Success the check generates, one enemy within short range suffers 1 strain. For each \Advantage, one enemy affected by Scathing Tirade suffers 1 additional strain.)
+\\\textbf{Abilities:}
+Socialite (Interacts with strain as a nemesis. Cannot take additional manoeuvres)
+Rile Them Up (Once per encounter as an action, this creature may make a \Average{} Leadership skill check, give one ally per \Success plus a number equal to your ranks in leadership a \Boost on each of their first check each round for the rest of the encounter, for each uncancelled \Advantage gives an extra \Boost to one ally affected by this skill. Targeted allies must be in medium range.)
+\\\textbf{Equipment:} Revolver (Light | Dam 6 | Crit 4 | Range Med | Accurate 1)
+}
+
+\vbox{
+\subsection{Luca Ramirez (Nemesis)}
+\begin{center}
+\Characteristics{1}{2}{3}{3}{4}{3}
+\Derived{Soak}{2}
+\Derived{W. Threshold}{16}
+\Derived{S. Threshold}{19}
+\DerivedSplit{Defence}{}{}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Knowledge (Mana) 1 \Yellow[1]\Green[2],
+Ranged (Light) 1 \Yellow[1]\Green[1],
+Manaflow 2  \Yellow[2]\Green[2],
+Charm 3 \Yellow[3],
+Deception 3 \Yellow[3],
+Coercion 2 \Yellow[2]\Green[1],
+Discipline 2 \Yellow[2]\Green[1],
+Vigilance 1 \Yellow[1]\Green[2],
+Cool 2 \Yellow[2]\Green[1],
+Leadership 1 \Yellow[1]\Green[2],
+\\\textbf{Talents:}
+Scathing Tirade
+Clever Retort
+\\\textbf{Abilities:}
+Brainworm (Upgrade the difficulty of any discipline checks to resist Luca's spells once, if he has spent more than a minute within short range of you this encounter. likewise if he has spent more than an hour within medium)
+Kneel Before Your King (Upgrade the difficulty of any discipline checks to resist Luca's spells if the associated command is three or fewer words)
+Psychic Hooks (Luca may add the Permanent additional modifier to any of his spells without increasing the difficulty)
+\\\textbf{Equipment:}
+}
+
+
+\vbox{
+\subsection{Pirate Captain (Rival)}
+\begin{center}
+\Characteristics{4}{3}{2}{3}{2}{3}
+\Derived{Soak}{5}
+\Derived{W. Threshold}{24}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Melee 3 \Yellow[3]\Green[1],
+Leadership 3 \Yellow[3],
+Coercion 2 \Yellow[2]\Green[1],
+Negotiation 2 \Yellow[2]\Green[1],
+Ranged Heavy 2 \Yellow[2]\Green[1],
+Ranged Light 1 \Yellow[1]\Green[2],
+Skulduggery 1 \Yellow[1]\Green[2],
+Vigilance 1 \Yellow[1]\Green[1],
+\\\textbf{Talents:}
+Berserk (\Success\Advantage\Advantage on melee checks, can't make ranged ones. opponents add \Success)
+Adversary 1 (Upgrade all combat checks once)
+\\\textbf{Abilities:}
+Stink Eye (Once per session, a Pirate Captain may upgrade or downgrade the difficulty of all social checks between his crew and a target character in the same encounter as him for the rest of the session)
+\\\textbf{Equipment:} Explosive Grenade, Frag Grenade, Smoke Grenade, Shotgun, Sword, Revolver (Hidden), Military Knife (Hidden)
+}
+
+\vbox{
+\subsection{Maria DeChenny (Nemesis)}
+\begin{center}
+\Characteristics{2}{2}{4}{3}{2}{3}
+\Derived{Soak}{3}
+\Derived{W. Threshold}{12}
+\Derived{S. Threshold}{12}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Weaving 2 \Yellow[2]\Green[2],
+Knowledge (Mana) 2 \Yellow[2]\Green[2],
+Deception 2 \Yellow[2]\Green[1],
+Coercion 2 \Yellow[2]\Green[1],
+Negotiation 2 \Yellow[2]\Green[1],
+Vigilance 1 \Yellow[1]\Green[2],
+Leadership 1 \Yellow[1]\Green[2],
+Perception 1 \Yellow[1]\Green[2],
+Ranged Light 1 \Yellow[1]\Green[1],
+Cool 1 \Yellow[1]\Green[1],
+Discipline 1 \Yellow[1]\Green[1],
+\\\textbf{Talents:}
+Syndicate Initiate (add \Blue[1] to the next check after a story point is spent)
+Clever Retort (once per session,  add an automatic \Threat\Threat to a social check),
+Preferred Spell (Icewire) (Reduce the difficulty of casting shockwire by \Purple[1])
+\\\textbf{Abilities:}
+Weaver (Maria can cast several spells, some of them are listed here including the additional effects she can add)
+\\\textbf{Icewire} make a \Average Weaving check to create a magical tripwire, visible only by the small runes etched at the anchor points, when tripped Maria must make an \Average Weaving check as an attack against the tripper with damage 4, Disorient 2, and Ensnare 2 (ranks in Knowledge (Mana))
+\\\textbf{Purple Haze} make a \Formidable Weaving check to cause two creatures within short range to decrease their ability for any skill checks by one. Spend one \Advantage to effect an additional target any number of times. This spell causes a thin purple mist to cover the targets' eyes obscuring their vision and making it hard to focus.
+\\\textbf{Alarm} make an \Easy Weaving check to create a magical circle or tripwire, visible only by the small runes etched at anchor points or the circle itself. When the alarm is triggered a second rune designated at casting will glow brightly for a few seconds.
+\\\textbf{Shatter} make an \Average Weaving check as an attack to cause a shockwave that shakes and shatters anything affected. The spell affects one target in short range and has 4 damage, and Sunder 2 (ranks in knowledge (mana))
+\\\textbf{Additional Modifiers} Range, Additional Targets, Shatter (Concussion), Cold Snap (Ice), Alarm, Seeking (Spatial Distortion), Rage (Flesh), Trap Spells.
+\\\textbf{}
+\\\textbf{Equipment:} Runic Tattoos (+1 Defence), Heavy Clothing (+1 Soak), Revolver, Military Knife.
+}
+
+\vbox{
+\subsection{Pick (Nemesis)}
+\begin{center}
+\Characteristics{1}{3}{2}{3}{4}{2}
+\Derived{Soak}{2}
+\Derived{W. Threshold}{10}
+\Derived{S. Threshold}{16}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Manaflow 2 \Yellow[2]\Green[2],
+Deception 1 \Yellow[1]\Green[2],
+Athletics 2 \Yellow[1]\Green[1],
+Ranged (Light) 2 \Yellow[2]\Green[1],
+Skulduggery 1 \Yellow[1]\Green[2],
+Stealth 2 \Yellow[2]\Green[1]
+\\\textbf{Talents:}
+Syndicate Initiate
+Quickdraw
+Conduit
+\\\textbf{Abilities:}
+Natural Caster (Pick can cast water spells, some of them are listed here)
+\\\textbf{Deep Freeze} make a \Formidable Manaflow check as a curse that encase the target in ice. This spell has concentration, and a range of short
+\\\textbf{Frostbite} Make a \Easy Manaflow check as an attack against a target in short range that causes a sudden drop in the target's body temperature. This attack deals 3 damage.
+\\\textbf{Equipment:}
+Revolver, Heavy Clothing
+}
+
+\vbox{
+\subsection{Hogan (Nemesis)}
+\begin{center}
+\Characteristics{5}{2}{1}{2}{2}{3}
+\Derived{Soak}{5}
+\Derived{W. Threshold}{17}
+\Derived{S. Threshold}{10}
+\DerivedSplit{Defence}{0}{0}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Melee 2 \Yellow[2]\Green[3],
+Brawl 2 \Yellow[2]\Green[3],
+Coercion 1 \Yellow[1]\Green[2],
+Vigilance 1 \Yellow[1]\Green[1]
+\\\textbf{Talents:}
+Berserker (Can go berserk, add \Success\Advantage\Advantage to all melee combat checks, opponents add \Success to all combat checks affecting Hogan)
+Heightened Awareness (Engaged allies add \Blue[2] to vigilance and perception checks, \Blue[1] if they're in short range)
+\\\textbf{Abilities:}
+\\\textbf{Equipment:}
+Sledgehammer (8 (+3) Dam, 4 Crit, Knockdown, Inaccurate 2, Cumbersome 3) 
+}
+
+\vbox{
+\subsection{Manta (Nemesis)}
+\begin{center}
+\Characteristics{1}{4}{2}{3}{3}{2}
+\Derived{Soak}{1}
+\Derived{W. Threshold}{11}
+\Derived{S. Threshold}{13}
+\DerivedSplit{Defence}{1}{1}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+Ranged (Heavy) 2 \Yellow[2]\Green[2],
+Ranged (Light) 1 \Yellow[2]\Green[1],
+Manaflow 1 \Yellow[1]\Green[2],
+Skulduggery 1 \Yellow[1]\Green[2],
+Perception 1 \Yellow[1]\Green[2],
+Vigilance 1 \Yellow[1]\Green[2],
+Stealth 1 \Yellow[1]\Green[3]
+\\\textbf{Talents:}
+Syndicate Initiate
+Careful Aim 4 (Can aim up to 6 times),
+Lucky Strike (Spend SP to increase attack damage by 4)
+\\\textbf{Abilities:}
+Invisibility (Manta can turn invisible as an action by making a \Hard Manaflow check, if he does he must spend one manouvre per round to concentrate on the spell, increase his ability on all checks once for the spells duration, the spell ends when he makes an attack)
+\\\textbf{Equipment:}
+Sniper Rifle, Revolver, Combat Clothing (+1 Def), Smoke Grenade
+}
+
+%%%%%%%%%%%%%%%%%
+\iffalse
+\vbox{
+\subsection{}
+\begin{center}
+\Characteristics{}{}{}{}{}{}
+\Derived{Soak}{}
+\Derived{W. Threshold}{}
+%\Derived{S. Threshold}{}
+\DerivedSplit{Defence}{}{}{Melee}{Ranged}
+\end{center}
+\textbf{Skills:}
+\\\textbf{Talents:}
+\\\textbf{Abilities:}
+\\\textbf{Equipment:}
+}
+\fi
+%%%%%%%%%%%%%%%%%
+\end{multicols}
+\end{document}
+ 

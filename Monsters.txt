@@ -1,0 +1,11 @@
+Shadowstep (When using a manoeuvre to move, The Hound can teleport through shadows instead. If they do add \Boost to their next combat check this turn)
+Hunter's Mark (The Hound always knows the direction towards any Black Mark, additionally she can track them as if by scent)
+Blackblood (When The Hound crits against a target with a Black Mark, that attack gains vicious 1 (or increase its rank by 1) and they must make a \Hard Resiliance check or be afflicted with Tindalos' Blight
+
+Revolver (Light | Dam 6 | Crit 4 | Range Med | Accurate 1), Katar (Brawl | Dam 4 (+1) | Crit 2 | Accurate 1), Hound's Hide (Defense 2, Soak 1)
+
+Tindalos' Blight: after three sunsets, and again each sunset thereafter the carrier must make a \Hard Resiliance check. each if they fail they are afflicted by hallucinations, upgrade the difficulty of relevant checks once for each uncanceled \Fail. Threats can be spent to add \Black to checks in the future as hallucinations afflict the subject.
+
+	Black Syndicate Preacher (Rival)
+2 | 2 | 3 | 3 | 3 | 4
+Coercion, Deception, ---

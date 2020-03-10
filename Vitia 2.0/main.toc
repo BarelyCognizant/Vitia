@@ -1,0 +1,149 @@
+\contentsline {section}{Introduction}{2}%
+\contentsline {section}{Crime and Punishment}{2}%
+\contentsline {subsection}{Going to Jail}{2}%
+\contentsline {subsection}{Bounties}{2}%
+\contentsline {section}{The Factions}{2}%
+\contentsline {subsection}{The Syndicates}{2}%
+\contentsline {subsubsection}{The Kings and Their Crowns}{2}%
+\contentsline {subsubsection}{The Red Syndicate}{2}%
+\contentsline {subsubsection}{The Blue Syndicate}{3}%
+\contentsline {subsubsection}{The Green Syndicate}{3}%
+\contentsline {subsubsection}{The Yellow Syndicate}{3}%
+\contentsline {subsubsection}{The Black Syndicate}{3}%
+\contentsline {subsubsection}{The Purple Syndicate}{3}%
+\contentsline {subsubsection}{The Gold Syndicate}{3}%
+\contentsline {subsubsection}{The Silver Syndicate}{3}%
+\contentsline {subsection}{Witches}{4}%
+\contentsline {subsection}{Zed's Bar}{4}%
+\contentsline {subsection}{Founder's Foundation}{4}%
+\contentsline {subsection}{The Kessler Group}{4}%
+\contentsline {subsection}{Reapers}{4}%
+\contentsline {subsection}{Witch Hunters}{4}%
+\contentsline {section}{Inside Vitia}{4}%
+\contentsline {subsection}{Links}{4}%
+\contentsline {subsection}{The Districts}{4}%
+\contentsline {subsubsection}{The Fire District}{4}%
+\contentsline {subsubsection}{The Water District}{5}%
+\contentsline {subsection}{Subterranean Sewer System}{5}%
+\contentsline {section}{Character Creation}{5}%
+\contentsline {subsection}{Archetypes}{5}%
+\contentsline {subsection}{Careers}{5}%
+\contentsline {subsubsection}{Paragon}{5}%
+\contentsline {subsubsection}{Arcanist}{5}%
+\contentsline {subsubsection}{Engineer}{5}%
+\contentsline {subsubsection}{Marksman}{5}%
+\contentsline {subsubsection}{Soldier}{5}%
+\contentsline {subsubsection}{Assassin}{5}%
+\contentsline {subsubsection}{Thief}{6}%
+\contentsline {subsubsection}{Artificer}{6}%
+\contentsline {subsection}{Talents}{6}%
+\contentsline {subsection}{Skills}{9}%
+\contentsline {section}{Magic}{9}%
+\contentsline {subsection}{Mana}{9}%
+\contentsline {subsubsection}{Overview}{9}%
+\contentsline {subsubsection}{Mana In The World}{9}%
+\contentsline {subsubsection}{Casting Spells}{9}%
+\contentsline {subsubsection}{Mana Overflows}{9}%
+\contentsline {subsubsection}{Mana Droughts}{9}%
+\contentsline {subsubsection}{Mana Blocking}{9}%
+\contentsline {subsubsection}{Mana Storms}{10}%
+\contentsline {subsubsection}{Metamagic}{10}%
+\contentsline {subsubsection}{Counterspelling}{10}%
+\contentsline {subsection}{Weavers}{10}%
+\contentsline {subsection}{Natural casters}{10}%
+\contentsline {subsection}{Fire Magic}{10}%
+\contentsline {subsubsection}{Attack Spells}{10}%
+\contentsline {subsubsection}{Augment Spells}{10}%
+\contentsline {subsubsection}{Barrier Spells}{10}%
+\contentsline {subsubsection}{Conjure Spells}{11}%
+\contentsline {subsubsection}{Curse Spells}{11}%
+\contentsline {subsubsection}{Heal Spells}{11}%
+\contentsline {subsubsection}{Dispelling}{11}%
+\contentsline {subsection}{Psychic (Memory) Magic}{11}%
+\contentsline {subsubsection}{Attack Spells}{11}%
+\contentsline {subsubsection}{Augment Spells}{11}%
+\contentsline {subsubsection}{Barrier Spells}{11}%
+\contentsline {subsubsection}{Curse Spells}{12}%
+\contentsline {subsubsection}{Conjure Spells}{12}%
+\contentsline {subsubsection}{Heal Spells}{12}%
+\contentsline {subsubsection}{Dispel Spells}{12}%
+\contentsline {subsubsection}{Alter Memory Spells}{12}%
+\contentsline {subsection}{Dimensional Magic}{12}%
+\contentsline {subsubsection}{Attack Spells}{12}%
+\contentsline {subsubsection}{Augment Spells}{12}%
+\contentsline {subsubsection}{Barrier Spells}{13}%
+\contentsline {subsubsection}{Curse Spells}{13}%
+\contentsline {subsubsection}{Conjure Spells}{13}%
+\contentsline {subsubsection}{Dispelling}{13}%
+\contentsline {subsubsection}{Teleportation Spells}{13}%
+\contentsline {subsection}{Water}{13}%
+\contentsline {subsubsection}{Attack Spells}{13}%
+\contentsline {subsubsection}{Augment Spells}{13}%
+\contentsline {subsubsection}{Barrier Spells}{14}%
+\contentsline {subsubsection}{Curse Spells}{14}%
+\contentsline {subsubsection}{Heal Spells}{14}%
+\contentsline {subsubsection}{Dispelling}{14}%
+\contentsline {subsection}{Lightning}{14}%
+\contentsline {subsubsection}{Attack Spells}{14}%
+\contentsline {subsubsection}{Augment Spells}{15}%
+\contentsline {subsubsection}{Barrier Spells}{15}%
+\contentsline {subsubsection}{Curse Spells}{15}%
+\contentsline {subsubsection}{Heal Spells}{15}%
+\contentsline {subsubsection}{Dispelling}{15}%
+\contentsline {subsection}{Flesh}{15}%
+\contentsline {subsubsection}{Attack Spells}{15}%
+\contentsline {subsubsection}{Augment Spells}{16}%
+\contentsline {subsubsection}{Barrier Spells}{16}%
+\contentsline {subsubsection}{Curse Spells}{16}%
+\contentsline {subsubsection}{Conjure Spells}{16}%
+\contentsline {subsubsection}{Heal Spells}{16}%
+\contentsline {subsubsection}{Dispelling}{16}%
+\contentsline {subsection}{Negative Energy}{16}%
+\contentsline {subsubsection}{Attack Spells}{17}%
+\contentsline {subsubsection}{Augment Spells}{17}%
+\contentsline {subsubsection}{Barrier Spells}{17}%
+\contentsline {subsubsection}{Conjure Spells}{17}%
+\contentsline {subsubsection}{Curse Spells}{17}%
+\contentsline {subsection}{Concussion}{17}%
+\contentsline {subsubsection}{Attack Spells}{18}%
+\contentsline {subsubsection}{Augment Spells}{18}%
+\contentsline {subsubsection}{Barrier Spells}{18}%
+\contentsline {subsubsection}{Curse Spells}{18}%
+\contentsline {subsection}{Haemomancy}{18}%
+\contentsline {subsubsection}{Attack Spells}{18}%
+\contentsline {subsubsection}{Augment Spells}{18}%
+\contentsline {subsubsection}{Barrier Spells}{18}%
+\contentsline {subsubsection}{Conjure Spells}{18}%
+\contentsline {subsubsection}{Curse Spells}{18}%
+\contentsline {subsubsection}{Dispelling}{18}%
+\contentsline {subsubsection}{Healing Spells}{18}%
+\contentsline {subsection}{Spatial Distortion Magic}{19}%
+\contentsline {subsubsection}{Attack Spells}{19}%
+\contentsline {subsubsection}{Augment Spells}{19}%
+\contentsline {subsubsection}{Barrier Spells}{19}%
+\contentsline {subsubsection}{Conjure Spells}{19}%
+\contentsline {subsubsection}{Curse Spells}{19}%
+\contentsline {subsubsection}{Dispelling}{19}%
+\contentsline {subsubsection}{Healing Spells}{19}%
+\contentsline {subsubsection}{Phasing Spells}{19}%
+\contentsline {subsection}{Object Enhancement Magic}{20}%
+\contentsline {subsubsection}{Attack Spells}{20}%
+\contentsline {subsubsection}{Augment Spells}{20}%
+\contentsline {subsubsection}{Barrier Spells}{20}%
+\contentsline {subsubsection}{Conjure Spells}{20}%
+\contentsline {subsubsection}{Curse Spells}{20}%
+\contentsline {subsubsection}{Healing Spells}{20}%
+\contentsline {subsubsection}{Dispelling Spells}{20}%
+\contentsline {subsection}{Vehicle Magic}{20}%
+\contentsline {subsubsection}{Attack Spells}{21}%
+\contentsline {subsubsection}{Augment Spells}{21}%
+\contentsline {subsubsection}{Barrier Spells}{21}%
+\contentsline {subsubsection}{Conjure Spells}{21}%
+\contentsline {subsubsection}{Curse Spells}{21}%
+\contentsline {subsubsection}{Healing Spells}{21}%
+\contentsline {subsubsection}{Dispelling Spells}{21}%
+\contentsline {section}{Equipment}{22}%
+\contentsline {subsection}{Weapons}{22}%
+\contentsline {subsection}{Artificing}{22}%
+\contentsline {subsection}{Tools}{23}%
+\contentsline {subsection}{Drugs}{23}%

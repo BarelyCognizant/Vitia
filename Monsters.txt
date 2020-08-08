@@ -6,6 +6,6 @@ Revolver (Light | Dam 6 | Crit 4 | Range Med | Accurate 1), Katar (Brawl | Dam 4
 
 Tindalos' Blight: after three sunsets, and again each sunset thereafter the carrier must make a \Hard Resiliance check. each if they fail they are afflicted by hallucinations, upgrade the difficulty of relevant checks once for each uncanceled \Fail. Threats can be spent to add \Black to checks in the future as hallucinations afflict the subject.
 
-	Black Syndicate Preacher (Rival)
+Black Syndicate Preacher (Rival)
 2 | 2 | 3 | 3 | 3 | 4
 Coercion, Deception, ---
